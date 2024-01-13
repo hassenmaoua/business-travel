@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updates>
+    <update>
+        <id>BTDEV-0001</id>
+        <path>scripts/BTDEV-0001.sql</path>
+        <comment>Creation de table Users</comment>
+    </update>
+</updates>
