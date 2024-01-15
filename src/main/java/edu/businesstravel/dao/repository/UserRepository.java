@@ -198,6 +198,17 @@ public class UserRepository implements CrudInterface<User, Long> {
         }
     }
 
+    @Override
+    public void updateById(User entity, Long idUser) throws SQLException {
+        String query = "UPDATE users SET email = ?, pswd = ? WHERE idUser = ?";
+        PreparedStatement st = connection.prepareStatement(query);
+        st.setString(1, entity.getEmail());
+        st.setString(2, entity.getPswd());
+        st.setLong(3, idUser);
+        st.executeUpdate();
+
+    }
+
     private void FetchUsers(List<User> userList, ResultSet resultSet) throws SQLException {
         while (resultSet.next()) {
             User user = new User();

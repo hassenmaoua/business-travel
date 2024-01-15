@@ -7,4 +7,7 @@ module edu.businesstravel {
 
     opens edu.businesstravel to javafx.fxml;
     exports edu.businesstravel;
+
+    exports edu.businesstravel.controllers;
+    opens edu.businesstravel.controllers to javafx.fxml;
 }

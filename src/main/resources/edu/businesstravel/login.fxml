@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="410.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.controllers.LoggedInController">
+   <children>
+      <TextField fx:id="email" layoutX="357.0" layoutY="148.0" prefHeight="26.0" prefWidth="182.0" promptText="enter your email" />
+      <PasswordField fx:id="password" layoutX="357.0" layoutY="214.0" prefHeight="26.0" prefWidth="182.0" promptText="enter your password" />
+      <Button fx:id="button" layoutX="373.0" layoutY="287.0" mnemonicParsing="false" onAction="#login" prefWidth="150.0" text="Log in" />
+      <VBox alignment="TOP_CENTER" prefHeight="410.0" prefWidth="302.0" style="-fx-background-color: #00008B;" AnchorPane.leftAnchor="0.0" />
+      <Label layoutX="435.0" layoutY="49.0" text="Login" textAlignment="CENTER" textFill="#4a22bf">
+         <font>
+            <Font name="Arial Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
