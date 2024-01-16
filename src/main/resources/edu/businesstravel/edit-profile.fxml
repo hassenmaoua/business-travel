@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.controllers.editProfile">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="161.0" style="-fx-background-color: #191970;">
+         <children>
+            <ImageView fitHeight="85.0" fitWidth="89.0" layoutX="31.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/profile.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="35.0" layoutY="131.0" text="Mohamed aziz" textFill="AZURE" />
+            <Button layoutX="35.0" layoutY="156.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="78.0" text="Edit Profile" textFill="#5b5454" />
+            <ImageView fitHeight="34.0" fitWidth="21.0" layoutX="20.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/person.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="57.0" layoutY="208.0" text="Profile" textFill="#faf4f4" />
+         </children></Pane>
+      <Pane layoutX="163.0" layoutY="-1.0" prefHeight="400.0" prefWidth="438.0" style="-fx-background-color: #000080;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Profile Settings" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
