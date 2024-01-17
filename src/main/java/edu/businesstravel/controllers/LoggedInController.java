@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -47,7 +48,7 @@ public class LoggedInController {
             System.out.println("Login successful");
             idUserConnected = loginRepository.getIdConnected();
             System.out.println(idUserConnected);
-
+            navigateToEditProfile();
 
 
         }else{
@@ -55,30 +56,27 @@ public class LoggedInController {
         }
 
     }
+public void navigateToEditProfile() {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/businesstravel/edit-profile.fxml"));
+        Parent root = loader.load();
+        editProfile editProfileController = loader.getController();
+        editProfileController.setConnectedUserId(idUserConnected);
 
-//    private void switchToNewScene() {
-//        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("edit-profile.fxml"));
-//
-//            Parent root = loader.load();
-//
-//            // Get the controller of the new scene
-//            editProfile newSceneController = loader.getController();
-//
-//            // You can pass data to the new scene controller if needed
-//            // newSceneController.setData(...);
-//
-//            Scene newScene = new Scene(root);
-//
-//            // Set the new scene to the primary stage
-//            primaryStage.setScene(newScene);
-//
-//            // Show the primary stage with the new scene
-//            primaryStage.show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+        Stage editProfileStage = new Stage();
+        editProfileStage.initModality(Modality.APPLICATION_MODAL);
+        editProfileStage.setTitle("Edit Profile");
+
+        Scene editProfileScene = new Scene(root);
+        editProfileStage.setScene(editProfileScene);
+
+        editProfileStage.showAndWait();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+
 
 
 

@@ -1,5 +1,4 @@
 package edu.businesstravel;
-
 import edu.businesstravel.controllers.LoggedInController;
 import edu.businesstravel.dao.repository.LoginRepository;
 import javafx.application.Application;
@@ -8,22 +7,21 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class HelloApplication extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600,400);
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.setResizable(true);
-        stage.show();
-
-
-    }
-
     public static void main(String[] args) {
         launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        LoginRepository loginRepository = new LoginRepository();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
+        LoggedInController controller = new LoggedInController(loginRepository);
+        fxmlLoader.setController(controller);
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root, 600, 400);
+        primaryStage.setTitle("Business Travel App");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 }
