@@ -1,5 +1,6 @@
 package edu.businesstravel.dao.repository.util;
 
+import java.sql.SQLException;
 import java.util.Optional;
 
 public interface CrudInterface<T, ID> {
@@ -26,4 +27,6 @@ public interface CrudInterface<T, ID> {
     void deleteAll(Iterable<? extends T> entities);
 
     void deleteAll();
+
+    void updateById(T entity,ID id) throws SQLException;
 }
