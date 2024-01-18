@@ -1,8 +1,7 @@
 package edu.businesstravel.dao.repository;
 
+import edu.businesstravel.dao.entities.Domaine;
 import edu.businesstravel.dao.entities.Entreprise;
-import edu.businesstravel.dao.entities.Role;
-import edu.businesstravel.dao.entities.User;
 import edu.businesstravel.dao.repository.util.CrudInterface;
 
 import java.sql.*;
@@ -10,44 +9,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class UserRepository implements CrudInterface<User, Long> {
+public class EntrepriseRepository implements CrudInterface<Entreprise, Long> {
     private final Connection connection;
-    private final EntrepriseRepository entrepriseRepository;
+    private final DomaineRepository domaineRepository;
 
-    public UserRepository(Connection connection) {
+    public EntrepriseRepository(Connection connection) {
         this.connection = connection;
-        this.entrepriseRepository = new EntrepriseRepository(connection);
+        this.domaineRepository = new DomaineRepository(connection);
     }
 
     @Override
-    public <S extends User> S save(S entity) {
+    public <S extends Entreprise> S save(S entity) {
         String query;
 
-        if (existsById(entity.getIdUser())) {
-            query = "UPDATE users SET email=?, pswd=?, role=?, nom=?, prenom=?, adresse=?, dateNaissance=?, telephone=?, entrepriseId=? WHERE idUser=?";
+        if (existsById(entity.getIdEntreprise())) {
+            query = "UPDATE entreprises SET  raisonSociale=?, adresse=?, domaineId=? WHERE idEntreprise=?";
         } else {
-            query = "INSERT INTO users(email, pswd, role, nom, prenom, adresse, dateNaissance, telephone, entrepriseId) VALUES(?,?,?,?,?,?,?,?,?)";
+            query = "INSERT INTO entreprises(raisonSociale, adresse, domaineId) VALUES(?,?,?)";
         }
         try {
             PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
-            statement.setString(1, entity.getEmail());
-            statement.setString(2, entity.getPswd());
-            statement.setString(3, entity.getRole().name());
-            statement.setString(4, entity.getNom());
-            statement.setString(5, entity.getPrenom());
-            statement.setString(6, entity.getAdresse());
-            statement.setDate(7, entity.getDateNaissance());
-            statement.setString(8, entity.getTelephone());
+            statement.setString(1, entity.getRaisonSociale());
+            statement.setString(2, entity.getAdresse());
 
-            if (entity.getEntreprise() != null) {
-                statement.setLong(9, entity.getEntreprise().getIdEntreprise());
-            } else {
-                statement.setNull(9, Types.BIGINT);
-            }
-
-            if (existsById(entity.getIdUser())) {
-                statement.setLong(10, entity.getIdUser());
+            if (existsById(entity.getIdEntreprise())) {
+                statement.setLong(3, entity.getIdEntreprise());
             }
 
             statement.executeUpdate();
@@ -56,9 +43,9 @@ public class UserRepository implements CrudInterface<User, Long> {
             ResultSet generatedKeys = statement.getGeneratedKeys();
             if (generatedKeys.next()) {
                 long generatedId = generatedKeys.getLong(1);
-                entity.setIdUser(generatedId);
+                entity.setIdEntreprise(generatedId);
             } else {
-                throw new SQLException("Failed to get generated ID for the user");
+                throw new SQLException("Failed to get generated ID for the Entreprise");
             }
 
             return entity;
@@ -69,9 +56,9 @@ public class UserRepository implements CrudInterface<User, Long> {
     }
 
     @Override
-    public <S extends User> void saveAll(Iterable<S> entities) {
+    public <S extends Entreprise> void saveAll(Iterable<S> entities) {
         try {
-            for (User entity : entities) {
+            for (Entreprise entity : entities) {
                 save(entity);
             }
         } catch (Exception e) {
@@ -80,15 +67,15 @@ public class UserRepository implements CrudInterface<User, Long> {
     }
 
     @Override
-    public Optional<User> findById(Long idUser) {
-        String query = "SELECT * FROM users WHERE idUser = ?";
+    public Optional<Entreprise> findById(Long idEntreprise) {
+        String query = "SELECT * FROM entreprises WHERE idEntreprise = ?";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setLong(1, idUser);
+            statement.setLong(1, idEntreprise);
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                return Optional.of(fetchUser(resultSet));
+                return Optional.of(fetchEntreprise(resultSet));
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -97,11 +84,11 @@ public class UserRepository implements CrudInterface<User, Long> {
     }
 
     @Override
-    public boolean existsById(Long idUser) {
-        String query = "SELECT COUNT(*) FROM users WHERE idUser = ?";
+    public boolean existsById(Long idEntreprise) {
+        String query = "SELECT COUNT(*) FROM entreprises WHERE idEntreprise = ?";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setLong(1, idUser);
+            statement.setLong(1, idEntreprise);
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
@@ -114,47 +101,47 @@ public class UserRepository implements CrudInterface<User, Long> {
     }
 
     @Override
-    public Iterable<User> findAll() {
-        List<User> userList = new ArrayList<>();
-        String query = "SELECT * FROM users";
+    public Iterable<Entreprise> findAll() {
+        List<Entreprise> entrepriseList = new ArrayList<>();
+        String query = "SELECT * FROM entreprises";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                User user = fetchUser(resultSet);
-                userList.add(user);
+                Entreprise entreprise = fetchEntreprise(resultSet);
+                entrepriseList.add(entreprise);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return userList;
+        return entrepriseList;
     }
 
 
     @Override
-    public Iterable<User> findAllById(Iterable<Long> ids) {
-        List<User> userList = new ArrayList<>();
-        String query = "SELECT * FROM users WHERE idUser IN (?)";
+    public Iterable<Entreprise> findAllById(Iterable<Long> ids) {
+        List<Entreprise> entrepriseList = new ArrayList<>();
+        String query = "SELECT * FROM entreprises WHERE idEntreprise IN (?)";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
             for (Long id : ids) {
                 statement.setLong(1, id);
                 ResultSet resultSet = statement.executeQuery();
                 while (resultSet.next()) {
-                    User user = fetchUser(resultSet);
-                    userList.add(user);
+                    Entreprise entreprise = fetchEntreprise(resultSet);
+                    entrepriseList.add(entreprise);
                 }
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return userList;
+        return entrepriseList;
     }
 
     @Override
     public long count() {
-        String query = "SELECT COUNT(*) FROM users";
+        String query = "SELECT COUNT(*) FROM entreprises";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
@@ -169,11 +156,11 @@ public class UserRepository implements CrudInterface<User, Long> {
     }
 
     @Override
-    public void deleteById(Long idUser) {
-        String query = "DELETE FROM users WHERE idUser = ?";
+    public void deleteById(Long idEntreprise) {
+        String query = "DELETE FROM entreprises WHERE idEntreprise = ?";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setLong(1, idUser);
+            statement.setLong(1, idEntreprise);
             statement.executeUpdate();
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -181,13 +168,13 @@ public class UserRepository implements CrudInterface<User, Long> {
     }
 
     @Override
-    public void delete(User entity) {
-        deleteById(entity.getIdUser());
+    public void delete(Entreprise entity) {
+        deleteById(entity.getIdEntreprise());
     }
 
     @Override
     public void deleteAllById(Iterable<? extends Long> ids) {
-        String query = "DELETE FROM users WHERE idUser IN (?)";
+        String query = "DELETE FROM entreprises WHERE idEntreprise IN (?)";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
             for (Long id : ids) {
@@ -200,17 +187,17 @@ public class UserRepository implements CrudInterface<User, Long> {
     }
 
     @Override
-    public void deleteAll(Iterable<? extends User> entities) {
+    public void deleteAll(Iterable<? extends Entreprise> entities) {
         List<Long> ids = new ArrayList<>();
-        for (User entity : entities) {
-            ids.add(entity.getIdUser());
+        for (Entreprise entity : entities) {
+            ids.add(entity.getIdEntreprise());
         }
         deleteAllById(ids);
     }
 
     @Override
     public void deleteAll() {
-        String query = "DELETE FROM users";
+        String query = "DELETE FROM entreprises";
         try {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.executeUpdate();
@@ -219,22 +206,15 @@ public class UserRepository implements CrudInterface<User, Long> {
         }
     }
 
-    private User fetchUser(ResultSet resultSet) throws SQLException {
-        User user = new User();
+    private Entreprise fetchEntreprise(ResultSet resultSet) throws SQLException {
+        Entreprise entreprise = new Entreprise();
+        entreprise.setIdEntreprise(resultSet.getLong("idEntreprise"));
+        entreprise.setRaisonSociale(resultSet.getString("raisonSociale"));
+        entreprise.setAdresse(resultSet.getString("adresse"));
 
-        user.setIdUser(resultSet.getLong("idUser"));
-        user.setEmail(resultSet.getString("email"));
-        user.setPswd(resultSet.getString("pswd"));
-        user.setRole(Role.valueOf(resultSet.getString("role")));
-        user.setNom(resultSet.getString("nom"));
-        user.setPrenom(resultSet.getString("prenom"));
-        user.setAdresse(resultSet.getString("adresse"));
-        user.setDateNaissance(resultSet.getDate("dateNaissance"));
-        user.setTelephone(resultSet.getString("telephone"));
+        Optional<Domaine> optionalDomaine = domaineRepository.findById(resultSet.getLong("domaineId"));
+        optionalDomaine.ifPresent(entreprise::setDomaine);
 
-        Optional<Entreprise> optionalEntreprise = entrepriseRepository.findById(resultSet.getLong("entrepriseId"));
-        optionalEntreprise.ifPresent(user::setEntreprise);
-
-        return user;
+        return entreprise;
     }
 }

@@ -1,8 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<updates>
-    <update>
-        <id>BTDEV-0001</id>
-        <path>scripts/BTDEV-0001.sql</path>
-        <comment>Creation de table Users</comment>
-    </update>
-</updates>
+<root>
+    <updates>
+        <update>
+            <id>BTDEV-0001</id>
+            <path>scripts/BTDEV-0001.sql</path>
+            <comment>Creation de table Users</comment>
+        </update>
+        <update>
+            <id>BTDEV-0002</id>
+            <path>scripts/BTDEV-0002.sql</path>
+            <comment>Ajouter des column aux table Users</comment>
+        </update>
+        <update>
+            <id>BTDEV-0003</id>
+            <path>scripts/BTDEV-0003.sql</path>
+            <comment>Creation de table Domaines</comment>
+        </update>
+        <update>
+            <id>BTDEV-0004</id>
+            <path>scripts/BTDEV-0004.sql</path>
+            <comment>Creation de table Entreprises</comment>
+        </update>
+        <update>
+            <id>BTDEV-0005</id>
+            <path>scripts/BTDEV-0005.sql</path>
+            <comment>Creation a foreign key constraint to the Entreprises table for the Domaines</comment>
+        </update>
+        <update>
+            <id>BTDEV-0006</id>
+            <path>scripts/BTDEV-0006.sql</path>
+            <comment>Creation a foreign key constraint to the Users table for the Entreprise</comment>
+        </update>
+    </updates>
+
+    <triggers>
+        <trigger>
+            <id>users_trigg</id>
+            <path>triggers/users_trigg.sql</path>
+            <comment>Trigger to set 'users' before insert/update</comment>
+        </trigger>
+        <trigger>
+            <id>entreprises_trigg</id>
+            <path>triggers/entreprises_trigg.sql</path>
+            <comment>Trigger to set 'entreprises' before insert/update</comment>
+        </trigger>
+        <trigger>
+            <id>domaines_trigg</id>
+            <path>triggers/domaines_trigg.sql</path>
+            <comment>Trigger to set 'domaines' before insert/update</comment>
+        </trigger>
+    </triggers>
+</root>

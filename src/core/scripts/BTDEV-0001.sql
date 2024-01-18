@@ -4,7 +4,7 @@ create table users
         primary key,
     email  varchar(191)                                             not null,
     pswd   varchar(255)                                             not null,
-    role   enum ('ADMIN', 'COMPANY', 'EMPLOYEE') default 'EMPLOYEE' not null,
+    role   enum ('ADMIN', 'COORDINATOR', 'EMPLOYER') default 'EMPLOYER' not null,
     constraint email
         unique (email),
     constraint chk_password_length
