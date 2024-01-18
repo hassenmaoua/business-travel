@@ -5,4 +5,14 @@
         <path>scripts/BTDEV-0001.sql</path>
         <comment>Creation de table Users</comment>
     </update>
+    <update>
+        <id>BTDEV-0002</id>
+        <path>scripts/BTDEV-0002.sql</path>
+        <comment>Creation de table categorie</comment>
+    </update>
+    <update>
+        <id>BTDEV-0003</id>
+        <path>scripts/BTDEV-0003.sql</path>
+        <comment>Creation de table evenement</comment>
+    </update>
 </updates>

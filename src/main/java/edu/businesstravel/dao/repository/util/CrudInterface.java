@@ -1,13 +1,14 @@
 package edu.businesstravel.dao.repository.util;
 
+import java.sql.SQLException;
 import java.util.Optional;
 
 public interface CrudInterface<T, ID> {
-    <S extends T> S save(S entity);
+    <S extends T> S save(S entity) throws SQLException;
 
     <S extends T> void saveAll(Iterable<S> entities);
 
-    Optional<T> findById(ID id);
+    Optional<T> findById(ID id) throws SQLException;
 
     boolean existsById(ID id);
 

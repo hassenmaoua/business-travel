@@ -13,9 +13,9 @@ public class Event {
     private String region;
     private String adresse;
     private Etat status;
-    private Category category;
+    private Long category;
 
-    public Event(Long idEvent, String title, String description, Date dateDebut, Date dateFin, String region, String adresse, Etat status, Category category) {
+    public Event(Long idEvent, String title, String description, Date dateDebut, Date dateFin, String region, String adresse, Etat status, Long category) {
         this.idEvent = idEvent;
         this.title = title;
         this.description = description;
@@ -94,11 +94,11 @@ public class Event {
         this.status = status;
     }
 
-    public Category getCategory() {
+    public Long getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(Long category) {
         this.category = category;
     }
 

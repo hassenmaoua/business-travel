@@ -5,15 +5,14 @@ import java.util.List;
 public class Category {
     private  Long idCategory;
     private String name;
-     private List<Event> eventList;
     public Long getIdCategory() {
         return idCategory;
     }
 
-    public Category(Long idCategory, String name, List<Event> eventList) {
+    public Category(Long idCategory, String name) {
         this.idCategory = idCategory;
         this.name = name;
-        this.eventList = eventList;
+
     }
     public Category(){}
 
@@ -22,7 +21,7 @@ public class Category {
         return "Category{" +
                 "idCategory=" + idCategory +
                 ", name='" + name + '\'' +
-                ", eventList=" + eventList +
+
                 '}';
     }
 
@@ -38,11 +37,5 @@ public class Category {
         this.name = name;
     }
 
-    public List<Event> getEventList() {
-        return eventList;
-    }
 
-    public void setEventList(List<Event> eventList) {
-        this.eventList = eventList;
-    }
 }

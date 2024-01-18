@@ -43,9 +43,7 @@ public class UserRepository implements CrudInterface<User, Long> {
         }
     }
 
-    public static void main(String[] args) {
 
-    }
     @Override
     public <S extends User> void saveAll(Iterable<S> entities) {
         String query = "INSERT INTO users(email, pswd, role) VALUES(?,?,?)";
@@ -211,4 +209,5 @@ public class UserRepository implements CrudInterface<User, Long> {
             userList.add(user);
         }
     }
+
 }
