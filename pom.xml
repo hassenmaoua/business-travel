@@ -67,23 +67,19 @@
             <artifactId>commons-io</artifactId>
             <version>2.13.0</version>
         </dependency>
-<<<<<<< HEAD
-=======
+
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
->>>>>>> master
+
     </dependencies>
 
     <build>
         <plugins>
-<<<<<<< HEAD
-=======
 
->>>>>>> master
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
