@@ -1,6 +1,5 @@
 package edu.businesstravel.dao.repository;
 
-import edu.businesstravel.dao.entities.Entreprise;
 import edu.businesstravel.dao.entities.Role;
 import edu.businesstravel.dao.entities.User;
 import edu.businesstravel.dao.repository.util.CrudInterface;
@@ -12,44 +11,20 @@ import java.util.Optional;
 
 public class UserRepository implements CrudInterface<User, Long> {
     private final Connection connection;
-    private final EntrepriseRepository entrepriseRepository;
 
-    public UserRepository(Connection connection) {
+    public UserRepository(Connection connection){
         this.connection = connection;
-        this.entrepriseRepository = new EntrepriseRepository(connection);
     }
 
     @Override
     public <S extends User> S save(S entity) {
-        String query;
-
-        if (existsById(entity.getIdUser())) {
-            query = "UPDATE users SET email=?, pswd=?, role=?, nom=?, prenom=?, adresse=?, dateNaissance=?, telephone=?, entrepriseId=? WHERE idUser=?";
-        } else {
-            query = "INSERT INTO users(email, pswd, role, nom, prenom, adresse, dateNaissance, telephone, entrepriseId) VALUES(?,?,?,?,?,?,?,?,?)";
-        }
+        String query = "INSERT INTO users(email, pswd, role) VALUES(?,?,?)";
         try {
             PreparedStatement statement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
             statement.setString(1, entity.getEmail());
             statement.setString(2, entity.getPswd());
             statement.setString(3, entity.getRole().name());
-            statement.setString(4, entity.getNom());
-            statement.setString(5, entity.getPrenom());
-            statement.setString(6, entity.getAdresse());
-            statement.setDate(7, entity.getDateNaissance());
-            statement.setString(8, entity.getTelephone());
-
-            if (entity.getEntreprise() != null) {
-                statement.setLong(9, entity.getEntreprise().getIdEntreprise());
-            } else {
-                statement.setNull(9, Types.BIGINT);
-            }
-
-            if (existsById(entity.getIdUser())) {
-                statement.setLong(10, entity.getIdUser());
-            }
-
             statement.executeUpdate();
 
             // Retrieve the generated ID
@@ -70,9 +45,14 @@ public class UserRepository implements CrudInterface<User, Long> {
 
     @Override
     public <S extends User> void saveAll(Iterable<S> entities) {
+        String query = "INSERT INTO users(email, pswd, role) VALUES(?,?,?)";
         try {
             for (User entity : entities) {
-                save(entity);
+                PreparedStatement statement = connection.prepareStatement(query);
+                statement.setString(1, entity.getEmail());
+                statement.setString(2, entity.getPswd());
+                statement.setString(3, entity.getRole().name());
+                statement.executeUpdate();
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -88,7 +68,12 @@ public class UserRepository implements CrudInterface<User, Long> {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                return Optional.of(fetchUser(resultSet));
+                User user = new User();
+                user.setIdUser(resultSet.getLong("idUser"));
+                user.setEmail(resultSet.getString("email"));
+                user.setPswd(resultSet.getString("pswd"));
+                user.setRole(Role.valueOf(resultSet.getString("role")));
+                return Optional.of(user);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -121,10 +106,7 @@ public class UserRepository implements CrudInterface<User, Long> {
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 
-            while (resultSet.next()) {
-                User user = fetchUser(resultSet);
-                userList.add(user);
-            }
+            FetchUsers(userList, resultSet);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -141,10 +123,7 @@ public class UserRepository implements CrudInterface<User, Long> {
             for (Long id : ids) {
                 statement.setLong(1, id);
                 ResultSet resultSet = statement.executeQuery();
-                while (resultSet.next()) {
-                    User user = fetchUser(resultSet);
-                    userList.add(user);
-                }
+                FetchUsers(userList, resultSet);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -219,22 +198,14 @@ public class UserRepository implements CrudInterface<User, Long> {
         }
     }
 
-    private User fetchUser(ResultSet resultSet) throws SQLException {
-        User user = new User();
-
-        user.setIdUser(resultSet.getLong("idUser"));
-        user.setEmail(resultSet.getString("email"));
-        user.setPswd(resultSet.getString("pswd"));
-        user.setRole(Role.valueOf(resultSet.getString("role")));
-        user.setNom(resultSet.getString("nom"));
-        user.setPrenom(resultSet.getString("prenom"));
-        user.setAdresse(resultSet.getString("adresse"));
-        user.setDateNaissance(resultSet.getDate("dateNaissance"));
-        user.setTelephone(resultSet.getString("telephone"));
-
-        Optional<Entreprise> optionalEntreprise = entrepriseRepository.findById(resultSet.getLong("entrepriseId"));
-        optionalEntreprise.ifPresent(user::setEntreprise);
-
-        return user;
+    private void FetchUsers(List<User> userList, ResultSet resultSet) throws SQLException {
+        while (resultSet.next()) {
+            User user = new User();
+            user.setIdUser(resultSet.getLong("idUser"));
+            user.setEmail(resultSet.getString("email"));
+            user.setPswd(resultSet.getString("pswd"));
+            user.setRole(Role.valueOf(resultSet.getString("role")));
+            userList.add(user);
+        }
     }
 }
