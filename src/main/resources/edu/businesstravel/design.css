@@ -1,0 +1,36 @@
+/* Styles for the GridPane */
+.grid-pane {
+    -fx-background-color: #f2f2f2;
+    -fx-padding: 20px;
+}
+
+/* Styles for Labels */
+.label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+}
+
+/* Styles for TextFields */
+.text-field {
+    -fx-font-size: 14px;
+}
+
+/* Styles for DatePickers */
+.date-picker {
+    -fx-font-size: 14px;
+}
+
+/* Apply specific styles to individual components if needed */
+#titleTextField {
+    -fx-pref-width: 200px;
+}
+
+#descriptionTextField {
+    -fx-pref-width: 200px;
+}
+
+#regionTextField, #adresseTextField, #categoryTextField {
+    -fx-pref-width: 200px;
+}
+
+/* Add more styling as needed */
