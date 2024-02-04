@@ -28,7 +28,8 @@ private   Connection connection= DatabaseConnection.getInstance().getConnection(
     public Optional<Object> save(Object o) {
         Category category =(Category)o;
 
-        String requete="INSERT INTO category (IdCategory, name)   VALUES ('"+category.getIdCategory()+"','"+category.getName()+"')";
+        String requete="INSERT INTO category (" +
+                " name)   VALUES ('"+category.getName()+"')";
         try{
             Statement st=connection.createStatement();
             st.executeUpdate(requete);

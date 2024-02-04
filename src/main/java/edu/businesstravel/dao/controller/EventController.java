@@ -97,12 +97,32 @@ public class EventController implements Initializable {
         Event e=new Event(title,description,region,adresse,status,category.getIdCategory(), dateDebutPicker.getValue(), dateFinPicker.getValue());
           eventRepository.save(e);
         System.out.println("event a ajouter "+e);
+        showSuccessAlert("Événement ajouté avec succès!");
+        clearFormFields();
+        
+   // redirectTolistEvent();
+    }
 
-     redirectTolistEvent();
+    private void clearFormFields() {
+        titleTextField.clear();
+        descriptionTextField.clear();
+        regionTextField.clear();
+        adresseTextField.clear();
+        statusComboBox.getSelectionModel().clearSelection();
+        categoryComboBox.getSelectionModel().clearSelection();
+        dateDebutPicker.setValue(null);
+        dateFinPicker.setValue(null);
+    }
+    private void showSuccessAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Succès");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
     private void redirectTolistEvent() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu.businesstravel/list_event.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/businesstravel/list_event.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             Stage stage = (Stage) submitButton.getScene().getWindow();

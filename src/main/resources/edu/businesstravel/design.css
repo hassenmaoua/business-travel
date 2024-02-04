@@ -67,3 +67,27 @@
     -fx-background-color: #65b3da;
     -fx-text-fill: white;
 }
+.grid-pane {
+    -fx-background-color: #f4f4f4;
+    -fx-padding: 20;
+}
+
+.label {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+
+.text-field,
+.date-picker,
+.combo-box {
+    -fx-pref-width: 200;
+    -fx-pref-height: 30;
+}
+
+.button {
+    -fx-pref-width: 200;
+    -fx-pref-height: 40;
+    -fx-font-size: 16;
+    -fx-text-fill: white;
+    -fx-background-color: #65b3da;
+}

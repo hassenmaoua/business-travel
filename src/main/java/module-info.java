@@ -3,6 +3,7 @@ module edu.businesstravel {
     requires javafx.fxml;
     requires java.sql;
     requires org.apache.commons.io;
+    requires org.apache.pdfbox;
 
 
     opens edu.businesstravel to javafx.fxml;

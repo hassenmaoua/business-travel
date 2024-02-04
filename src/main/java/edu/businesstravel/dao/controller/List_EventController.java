@@ -1,4 +1,5 @@
 package edu.businesstravel.dao.controller;
+import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
 
 import edu.businesstravel.dao.entities.Category;
 import edu.businesstravel.dao.entities.Etat;
@@ -16,7 +17,17 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.stage.FileChooser;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.common.PDRectangle;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 import javax.security.auth.callback.Callback;
 import java.net.URL;
 import java.time.LocalDate;
@@ -124,4 +135,103 @@ public class List_EventController implements Initializable {
     }
 
 
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(message);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+    public void exportToPDF(ActionEvent event) throws IOException {
+        // 1. Get the visible events from the table, limiting to 5
+        List<Event> eventsToExport = eventTable.getItems().stream()
+                .filter(obj -> obj instanceof Event)
+                .map(obj -> (Event) obj)
+                .limit(5)  // Limit to 5 events
+                .collect(Collectors.toList());
+
+        // 2. Create a PDF document
+        PDDocument document = new PDDocument();
+
+        // 3. Create a page
+        PDPage page = new PDPage(PDRectangle.A2);
+        document.addPage(page);
+
+        // 4. Create a content stream
+        PDPageContentStream contentStream = new PDPageContentStream(document, page);
+
+        // 5. Set font and color
+        contentStream.setFont(PDType1Font.HELVETICA, 12);
+        contentStream.setNonStrokingColor(PDDeviceRGB.INSTANCE.getInitialColor());
+
+        // 6. Write headers
+        contentStream.beginText();
+        contentStream.newLineAtOffset(25, 750);
+        contentStream.showText("List of Events");
+        contentStream.newLineAtOffset(0, -20);
+        contentStream.showText("Date: " + LocalDate.now());
+        contentStream.endText();
+
+        // 7. Create table headers
+        float tableWidth = page.getMediaBox().getWidth() - 50;  // Adjust width as needed
+        float yStart = 600;  // Adjust starting position as needed
+        float rowHeight = 20;  // Adjust row height as needed
+
+        String[] headers = {"Title", "Description", "Date", "Region", "Address", "Status", "Category"};
+        contentStream.beginText();
+        contentStream.newLineAtOffset(25, yStart);
+        for (String header : headers) {
+            float headerWidth = tableWidth / headers.length;
+            contentStream.showText(header);
+            contentStream.newLineAtOffset(headerWidth, 0);
+        }
+        contentStream.endText();
+
+        // 8. Draw table lines
+        contentStream.moveTo(25, yStart - rowHeight);
+        contentStream.lineTo(tableWidth + 25, yStart - rowHeight);
+        contentStream.moveTo(25, yStart - 2 * rowHeight);
+        contentStream.lineTo(tableWidth + 25, yStart - 2 * rowHeight);
+        contentStream.stroke();
+
+        // 9. Write event details in table rows
+        yStart -= 3 * rowHeight;
+        for (Event ev : eventsToExport) {
+            contentStream.beginText();
+            contentStream.newLineAtOffset(25, yStart);
+            contentStream.showText(ev.getTitle());
+            contentStream.newLineAtOffset(tableWidth / 7, 0);  // Adjust column widths as needed
+            contentStream.showText(ev.getDescription());
+            contentStream.showText( "/"+ ev.getDateDebut() + " - " + ev.getDateFin() +"/");
+            contentStream.showText( ev.getRegion());
+            contentStream.showText( ev.getAdresse());
+              contentStream.showText(ev.getStatus().toString());
+            contentStream.showText( ev.getCategory().toString());
+            contentStream.endText();
+
+            yStart -= rowHeight;
+        }
+
+        // 10. Close the content stream
+        contentStream.close();
+
+        // 11. Prompt user for file name and save
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save PDF");
+
+        // Ensure filename has .pdf extension
+        fileChooser.setInitialFileName("events.pdf");  // Set default filename with .pdf
+        File file = fileChooser.showSaveDialog(eventTable.getScene().getWindow());
+
+        if (file != null) {
+            // Handle cases where user doesn't add .pdf extension
+            if (!file.getName().endsWith(".pdf")) {
+                file = new File(file.getPath() + ".pdf");  // Append .pdf if missing
+            }
+            document.save(file);
+            document.close();
+            showAlert("Events exported");
+
+        }
+    }
 }

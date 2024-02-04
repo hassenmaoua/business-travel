@@ -31,9 +31,9 @@ public class CategoryController implements Initializable {
     private void ajoutCategorie() {
         String categoryName = categoryNameTextField.getText();
         System.out.println("Catégorie ajoutée : " + categoryName);
-
+        Category c=new Category(categoryName);
+        categoryRepository.save(c);
         categoryNameTextField.clear();
-
 
 
     }
