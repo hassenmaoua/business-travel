@@ -1,6 +1,9 @@
 package edu.businesstravel.dao.entities;
 
+import javafx.scene.control.DatePicker;
+
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Event {
 
@@ -8,14 +11,14 @@ public class Event {
     private String title;
 
     private String description;
-    private Date dateDebut;
-    private Date dateFin;
+    private LocalDate dateDebut;
+    private LocalDate dateFin;
     private String region;
     private String adresse;
     private Etat status;
     private Long category;
 
-    public Event(Long idEvent, String title, String description, Date dateDebut, Date dateFin, String region, String adresse, Etat status, Long category) {
+    public Event(Long idEvent, String title, String description, LocalDate dateDebut, LocalDate dateFin, String region, String adresse, Etat status, Long category) {
         this.idEvent = idEvent;
         this.title = title;
         this.description = description;
@@ -29,6 +32,22 @@ public class Event {
     public Event(){
 
     }
+
+
+
+
+
+    public Event(String title, String description, String region, String adresse, Etat status, Long category,  LocalDate dateDebut, LocalDate dateFin) {
+        this.title = title;
+        this.description = description;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.region = region;
+        this.adresse = adresse;
+        this.status = status;
+        this.category = category;
+    }
+
 
     public Long getIdEvent() {
         return idEvent;
@@ -54,19 +73,19 @@ public class Event {
         this.description = description;
     }
 
-    public Date getDateDebut() {
+    public LocalDate getDateDebut() {
         return dateDebut;
     }
 
-    public void setDateDebut(Date dateDebut) {
+    public void setDateDebut(LocalDate dateDebut) {
         this.dateDebut = dateDebut;
     }
 
-    public Date getDateFin() {
+    public LocalDate getDateFin() {
         return dateFin;
     }
 
-    public void setDateFin(Date dateFin) {
+    public void setDateFin(LocalDate dateFin) {
         this.dateFin = dateFin;
     }
 

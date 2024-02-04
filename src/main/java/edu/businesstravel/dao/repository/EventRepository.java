@@ -9,6 +9,7 @@ import edu.businesstravel.dao.tools.DatabaseConnection;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -17,15 +18,18 @@ import java.util.Optional;
 import static edu.businesstravel.dao.entities.Etat.Done;
 
 public class EventRepository implements ICrud {
-    private final Connection connection;
-
+   // private  Connection connection;
+    private   Connection connection= DatabaseConnection.getInstance().getConnection();
     public EventRepository(Connection connection) {
+        this.connection = connection;
+    }  public EventRepository() {
         this.connection = connection;
     }
 
 
     @Override
     public Optional<Object> save(Object o) {
+
         if (o instanceof Event) {
             Event event = (Event) o;
 
@@ -35,8 +39,10 @@ public class EventRepository implements ICrud {
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
                     preparedStatement.setString(1, event.getTitle());
                     preparedStatement.setString(2, event.getDescription());
-                    preparedStatement.setDate(3, new java.sql.Date(event.getDateDebut().getTime()));
-                    preparedStatement.setDate(4, new java.sql.Date(event.getDateFin().getTime()));
+                    java.sql.Date dateDebutSql = java.sql.Date.valueOf(event.getDateDebut());
+                    java.sql.Date dateFinSql = java.sql.Date.valueOf(event.getDateFin());
+                    preparedStatement.setDate(3, dateDebutSql);
+                    preparedStatement.setDate(4, dateFinSql);
                     preparedStatement.setString(5, event.getRegion());
                     preparedStatement.setString(6, event.getAdresse());
                     preparedStatement.setString(7, event.getStatus().name());
@@ -86,7 +92,7 @@ public class EventRepository implements ICrud {
         List<Object> events = new ArrayList<>();
 
         try {
-            String query = "SELECT * FROM event";
+            String query = "SELECT * FROM event ";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     while (resultSet.next()) {
@@ -131,11 +137,14 @@ public class EventRepository implements ICrud {
             try {
                 String query = "UPDATE event SET title = ?, description = ?, dateDebut = ?, dateFin = ?, " +
                         "region = ?, adresse = ?, status = ?, idCategory = ? WHERE idEvent = ?";
+                System.out.println("query "+query);
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     preparedStatement.setString(1, updatedEvent.getTitle());
                     preparedStatement.setString(2, updatedEvent.getDescription());
-                    preparedStatement.setDate(3, new java.sql.Date(updatedEvent.getDateDebut().getTime()));
-                    preparedStatement.setDate(4, new java.sql.Date(updatedEvent.getDateFin().getTime()));
+                    java.sql.Date dateDebutSql = java.sql.Date.valueOf(updatedEvent.getDateDebut());
+                    java.sql.Date dateFinSql = java.sql.Date.valueOf(updatedEvent.getDateFin());
+                    preparedStatement.setDate(4, dateDebutSql);
+                    preparedStatement.setDate(5, dateFinSql);
                     preparedStatement.setString(5, updatedEvent.getRegion());
                     preparedStatement.setString(6, updatedEvent.getAdresse());
                     preparedStatement.setString(7, updatedEvent.getStatus().name());
@@ -167,8 +176,8 @@ public class EventRepository implements ICrud {
         event.setIdEvent(resultSet.getLong("idEvent"));
         event.setTitle(resultSet.getString("title"));
         event.setDescription(resultSet.getString("description"));
-        event.setDateDebut(resultSet.getDate("dateDebut"));
-        event.setDateFin(resultSet.getDate("dateFin"));
+        event.setDateDebut(resultSet.getDate("dateDebut").toLocalDate());
+        event.setDateFin(resultSet.getDate("dateFin").toLocalDate());
         event.setRegion(resultSet.getString("region"));
         event.setAdresse(resultSet.getString("adresse"));
         event.setStatus(Etat.valueOf(resultSet.getString("status")));
@@ -178,44 +187,6 @@ public class EventRepository implements ICrud {
     }
 
     public static void main(String[] args) {
-        EventRepository eventRepository = new EventRepository(DatabaseConnection.getInstance().getConnection());
-
-        Date date = new Date(2023,12,23);
-        Date dateF = new Date(2024,01,01);
-        Category c=new Category(1L,"A");
-        Event sampleEvent = new Event(
-                5L,
-                "Sample Event",
-                "This is a sample event description.",
-                date,
-                dateF,
-                "Sample Region",
-                "Sample Address",
-                Done, 2L
-        );
-        Event sampleEvent1 = new Event(
-                66L,
-                "test",
-                "test",
-                date,
-                dateF,
-                "test",
-                "test",
-                Done, 3L
-        );
-        ArrayList<Object> list=new ArrayList<>();
-        list.add(sampleEvent);
-        list.add(sampleEvent1);
-       // System.out.println(sampleEvent);
-       //System.out.println(eventRepository.save(sampleEvent));
-       // System.out.println( eventRepository.findById(2L));
-
- // eventRepository.deleteOne(2L);
-        eventRepository.saveAll(list);
-        eventRepository.findAll().forEach(System.out::println);
-        eventRepository.update(sampleEvent1,3L);
-        System.out.println(   eventRepository.findById(3L));
-
 
     }
 }

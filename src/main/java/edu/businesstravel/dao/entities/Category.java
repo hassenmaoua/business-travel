@@ -1,10 +1,11 @@
 package edu.businesstravel.dao.entities;
 
-import java.util.List;
-
 public class Category {
     private  Long idCategory;
     private String name;
+
+
+
     public Long getIdCategory() {
         return idCategory;
     }

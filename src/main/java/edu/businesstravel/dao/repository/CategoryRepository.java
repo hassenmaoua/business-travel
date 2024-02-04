@@ -10,9 +10,17 @@ import java.util.List;
 import java.util.Optional;
 
 public class CategoryRepository implements ICrud {
-private  final Connection connection;
+private   Connection connection= DatabaseConnection.getInstance().getConnection();
 
-    public CategoryRepository(Connection connection) {
+    public Connection getConnection() {
+        return connection;
+    }
+
+    public void setConnection(Connection connection) {
+        this.connection = connection;
+    }
+
+    public CategoryRepository() {
         this.connection = connection;
     }
 
@@ -63,8 +71,7 @@ private  final Connection connection;
     }
 
     @Override
-
-        public List<Object> findAll() {
+       public List<Object> findAll() {
             String query = "SELECT * FROM category";
             ArrayList<Object> list = new ArrayList<>();
 
@@ -181,19 +188,14 @@ private  final Connection connection;
     }
 
     public static void main(String[] args) {
-        CategoryRepository categoryRepository=new CategoryRepository(DatabaseConnection.getInstance().getConnection());
-       Category c=new Category(6L,"event test");
+        CategoryRepository categoryRepository=new CategoryRepository();
+
       //  categoryRepository.save(c);
         System.out.println("find by id"+categoryRepository.findById(2L));
         System.out.println(categoryRepository.findAll());
-      //  categoryRepository.deleteOne(4L);
 
-        ArrayList<Object> categories=new ArrayList<>();
-        Category e=new Category(9L,"ist");
-        Category b=new Category(99L,"sfsd");
-        categories.add(e);
-        categories.add(b);
-       // categoryRepository.saveAll(categories);
+
+
 
     }
 }

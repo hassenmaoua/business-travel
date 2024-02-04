@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.dao.controller.List_EventController">
+    <Label style="-fx-font-size: 24; -fx-font-weight: bold;" text="Liste des événements" />
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Filtrer par Title ou Description:" />
+        <TextField fx:id="filterTextField" alignment="CENTER" editable="false" onKeyReleased="#filterTable" prefHeight="43.0" prefWidth="340.0">
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
+      <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="160.0" style="-fx-background-color: white;" text="Ajouter Evénement" textAlignment="CENTER" textOverrun="CLIP">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <effect>
+         <Bloom />
+      </effect>
+    </HBox>
+    <TableView fx:id="eventTable" VBox.vgrow="ALWAYS">
+    <columns>
+        <TableColumn fx:id="titleColumn" prefWidth="120" text="Title">
+            <cellValueFactory>
+                <PropertyValueFactory property="title" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="descriptionColumn" prefWidth="200" text="Description">
+            <cellValueFactory>
+                <PropertyValueFactory property="description" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="dateDebutColumn" prefWidth="120" text="Date Début">
+            <cellValueFactory>
+                <PropertyValueFactory property="dateDebut" />
+            </cellValueFactory>
+        </TableColumn>
+
+        <TableColumn fx:id="dateFinColumn" prefWidth="120" text="Date Fin">
+            <cellValueFactory>
+                <PropertyValueFactory property="dateFin" />
+            </cellValueFactory>
+        </TableColumn>
+
+        <TableColumn fx:id="regionColumn" prefWidth="120" text="Region">
+            <cellValueFactory>
+                <PropertyValueFactory property="region" />
+            </cellValueFactory>
+        </TableColumn>
+
+        <TableColumn fx:id="adresseColumn" prefWidth="120" text="Adresse">
+            <cellValueFactory>
+                <PropertyValueFactory property="adresse" />
+            </cellValueFactory>
+        </TableColumn>
+
+        <TableColumn fx:id="statusColumn" prefWidth="120" text="Status">
+            <cellValueFactory>
+                <PropertyValueFactory property="status" />
+            </cellValueFactory>
+        </TableColumn>
+
+        <TableColumn fx:id="categoryColumn" prefWidth="120" text="Category">
+            <cellValueFactory>
+                <PropertyValueFactory property="category" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn prefWidth="120" text="Actions">
+            <cellValueFactory>
+                <PropertyValueFactory property="" />
+            </cellValueFactory>
+        </TableColumn>
+    </columns>
+</TableView>
+    <Pagination fx:id="pagination" prefHeight="50.0" prefWidth="1162.0" />
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+</VBox>
