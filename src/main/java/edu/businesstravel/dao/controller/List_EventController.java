@@ -1,4 +1,10 @@
 package edu.businesstravel.dao.controller;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import org.apache.pdfbox.pdmodel.graphics.color.PDDeviceRGB;
 
 import edu.businesstravel.dao.entities.Category;
@@ -33,9 +39,15 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class List_EventController implements Initializable {
+    @FXML
+    private BorderPane bp;
+    @FXML
+    private Button exportButton1;
     @FXML
     private TextField categoryNameTextField;
     @FXML
@@ -70,7 +82,7 @@ public class List_EventController implements Initializable {
     private Pagination pagination;
     private final EventRepository eventRepository = new EventRepository();
     private final CategoryRepository categoryRepository = new CategoryRepository();
-    private final int itemsPerPage = 10;
+    private final int itemsPerPage = 15;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -233,5 +245,116 @@ public class List_EventController implements Initializable {
             showAlert("Events exported");
 
         }
+    }
+    @FXML
+    private void supprimer(ActionEvent event) {
+        // Récupérer la ligne sélectionnée
+        Event selectedEvent = (Event) eventTable.getSelectionModel().getSelectedItem();
+
+        if (selectedEvent != null) {
+            Long selectedEventId = selectedEvent.getIdEvent();
+
+            // Afficher une boîte de dialogue de confirmation
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation de suppression");
+            alert.setHeaderText("Voulez-vous vraiment supprimer l'événement sélectionné?");
+            alert.setContentText("Cette action est irréversible.");
+
+            // Attendre la réponse de l'utilisateur
+            ButtonType result = alert.showAndWait().orElse(ButtonType.CANCEL);
+
+            // Si l'utilisateur a confirmé, supprimer l'événement
+            if (result == ButtonType.OK) {
+               eventRepository.deleteOne(selectedEventId);
+                refreshTableAndPagination();
+                // Rafraîchir la table après la suppression (à remplacer par votre logique réelle)
+                // par exemple, eventTable.getItems().remove(selectedEvent);
+            }
+        } else {
+            // Aucun événement sélectionné, afficher un message d'erreur
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Aucune sélection");
+            alert.setHeaderText("Aucun événement sélectionné");
+            alert.setContentText("Veuillez sélectionner un événement à supprimer.");
+            alert.showAndWait();
+        }
+    }
+    private void refreshTableAndPagination() {
+        try {
+            List<Object> events = eventRepository.findAll();
+
+            ObservableList<Object> allEventsObservable = FXCollections.observableArrayList(events);
+
+            // Configurer la pagination
+            int pageCount = (int) Math.ceil((double) events.size() / itemsPerPage);
+            pagination.setPageCount(pageCount);
+
+            // Écouteur pour changer la page
+            pagination.currentPageIndexProperty().addListener((obs, oldIndex, newIndex) -> showTablePage(newIndex.intValue(), allEventsObservable));
+            pagination.currentPageIndexProperty().addListener((obs, oldIndex, newIndex) -> showTablePage(newIndex.intValue(), allEventsObservable));
+
+            // Afficher la première page
+            showTablePage(pagination.getCurrentPageIndex(), allEventsObservable);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void modifier(ActionEvent event) {
+        // Get the selected item from the table
+        Event selectedItem = (Event) eventTable.getSelectionModel().getSelectedItem();
+        System.out.println("selectedItem  "+selectedItem);
+        if (selectedItem != null) {
+            try {
+                // Load the modification form FXML
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/edu/businesstravel/modif_event.fxml"));
+                Parent root = loader.load();
+
+                // Get the controller of the modification form
+                Modif_Controller modifController = loader.getController();
+
+                // Pass the selected item to the modification form controller
+                modifController.initializeData(selectedItem);
+
+                // Create a new scene and set it on the stage
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+
+                // Show the stage
+                stage.show();
+
+                // Close the current window (optional)
+                ((Node)(event.getSource())).getScene().getWindow().hide();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            // Display a message indicating that no item is selected
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Aucun événement sélectionné");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez sélectionner un événement à modifier.");
+            alert.showAndWait();
+        }
+    }
+    public void loadPage(String page) {
+        Parent root  = null;
+
+        try {
+            //      FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("add_category.fxml"));
+
+            root= FXMLLoader.load(getClass().getResource(page+".fxml"));
+
+        }
+        catch (IOException ex) {
+            Logger.getLogger(SideBarController.class.getName()).log(Level.SEVERE,null,ex);
+
+        }
+        bp.setCenter(root);
+    }
+    public void ModificationEvent(javafx.scene.input.MouseEvent mouseEvent) {
+        loadPage("/edu/businesstravel/modif_event");
     }
 }

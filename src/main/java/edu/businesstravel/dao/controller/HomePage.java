@@ -13,7 +13,7 @@ public class HomePage extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1500, 700);
-        stage.setTitle("Ajouter D'evenement !");
+        stage.setTitle("Gestion Categorie & Evénement  !");
         stage.setScene(scene);
         stage.show();
     }

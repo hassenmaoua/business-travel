@@ -6,24 +6,30 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
 <?import java.net.URL?>
+<?import javafx.scene.control.ToolBar?>
 <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1350.0" style="-fx-background-color: #14242B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.dao.controller.CategoryController">
-
 
     <stylesheets>
         <URL value="@design.css" />
     </stylesheets>
     <children>
+        <ToolBar prefHeight="40.0" style="-fx-background-color: #14242B;">
+            <Button fx:id="ajouterButton" cache="true" mnemonicParsing="false" onAction="#ajoutCategory" prefHeight="1.0" prefWidth="186.0" style="-fx-color-label-visible:true" text="Ajouter Catégorie" textFill="#5850eb" />
+            <Button fx:id="modifierButton" cache="true" mnemonicParsing="false" onAction="#modifierCategory" prefHeight="1.0" prefWidth="186.0" style="-fx-color-label-visible:true" text="Modifier" textFill="#ff9800" />
+
+            <Button fx:id="supprimerButton" cache="true" mnemonicParsing="false" onAction="#supprimerCategory" prefHeight="1.0" prefWidth="186.0" style="-fx-color-label-visible:true" text="Supprimer" textFill="#0c07a6" />
+        </ToolBar>
+
         <GridPane alignment="CENTER" hgap="10" styleClass="grid-pane" stylesheets="@design.css" vgap="10">
             <Label style="-fx-text-fill: #333333;" text="Category Name:" GridPane.rowIndex="9" />
             <TextField fx:id="categoryNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-
-            <Button fx:id="submitButton" cache="true" mnemonicParsing="false" onAction="#ajoutCategorie" text="Ajouter Catégorie" textFill="#5850eb" GridPane.columnIndex="1" GridPane.rowIndex="10" />
 
             <columnConstraints>
                 <ColumnConstraints />
@@ -44,11 +50,10 @@
             </rowConstraints>
         </GridPane>
 
-        <TableView fx:id="categoryTable" prefHeight="517.0" prefWidth="1350.0">
+        <TableView fx:id="categoryTable" prefHeight="300.0" maxHeight="600.0" minHeight="500.0" prefWidth="200.0">
             <columns>
                 <TableColumn fx:id="idCategory" maxWidth="144.80001831054688" prefWidth="101.60000610351562" text="ID" />
                 <TableColumn fx:id="nomCategory" maxWidth="229.5999755859375" minWidth="0.0" prefWidth="192.80001831054688" text="Nom Categorie" />
-                <TableColumn  maxWidth="229.5999755859375" minWidth="0.0" prefWidth="192.80001831054688" text="Actions" />
 
             </columns>
         </TableView>

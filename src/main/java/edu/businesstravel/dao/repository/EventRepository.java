@@ -143,8 +143,8 @@ public class EventRepository implements ICrud {
                     preparedStatement.setString(2, updatedEvent.getDescription());
                     java.sql.Date dateDebutSql = java.sql.Date.valueOf(updatedEvent.getDateDebut());
                     java.sql.Date dateFinSql = java.sql.Date.valueOf(updatedEvent.getDateFin());
-                    preparedStatement.setDate(4, dateDebutSql);
-                    preparedStatement.setDate(5, dateFinSql);
+                    preparedStatement.setDate(3, dateDebutSql);
+                    preparedStatement.setDate(4, dateFinSql);
                     preparedStatement.setString(5, updatedEvent.getRegion());
                     preparedStatement.setString(6, updatedEvent.getAdresse());
                     preparedStatement.setString(7, updatedEvent.getStatus().name());

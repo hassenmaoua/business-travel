@@ -13,7 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -167,4 +166,5 @@ public class EventController implements Initializable {
         LocalDate dateFin = dateFinPicker.getValue();
         return dateDebut != null && dateFin != null && dateDebut.isBefore(dateFin);
     }
+
 }

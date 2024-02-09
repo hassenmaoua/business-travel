@@ -26,6 +26,9 @@ public class SideBarController implements Initializable {
     public void ajoutEvenement(javafx.scene.input.MouseEvent mouseEvent) {
         loadPage("/edu/businesstravel/add_event");
     }
+    public void test(javafx.scene.input.MouseEvent mouseEvent) {
+        loadPage("/edu/businesstravel/modif_category");
+    }
     public void loadPage(String page) {
         Parent root  = null;
 

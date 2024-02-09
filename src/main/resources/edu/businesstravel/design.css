@@ -24,7 +24,19 @@
 #titleTextField {
     -fx-pref-width: 200px;
 }
-
+/*#filterTextField{
+    -fx-text-fill: black !important;
+-fx-background-color: #ffffff !important;
+}*/
+#exportButton{
+    -fx-text-fill: black;
+}
+#exportButton1{
+    -fx-text-fill: black;
+}
+#exportButton11{
+    -fx-text-fill: black;
+}
 #descriptionTextField {
     -fx-pref-width: 200px;
 }
