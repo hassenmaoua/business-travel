@@ -1,0 +1,26 @@
+.menu-button {
+    -fx-padding: 0px 8px 0px 8px;
+    -fx-font-size: 12pt;
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFF;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
+}
+
+.menu-button:focused {
+    -fx-background-color: #626262;
+}
+
+.menu-button:hover{
+    -fx-background-color: #202020;
+}
+
+
+.active-menu-button {
+    -fx-background-color: #626262;
+}
+
+.active-menu-button:hover {
+    -fx-background-color: #626262;
+    -fx-cursor: default;
+}

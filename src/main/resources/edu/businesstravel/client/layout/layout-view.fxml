@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.client.layout.LayoutController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    <top>
+        <AnchorPane id="topPane" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="40.0" prefWidth="800.0">
+            <children>
+                <ImageView id="exit" fx:id="exit1" fitHeight="32.0" fitWidth="32.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="8.0">
+                    <image>
+                        <Image url="@../../assets/images/airplane.png" />
+                    </image>
+                </ImageView>
+                <Label id="titleLabel" fx:id="titleLabel" layoutX="46.0" layoutY="6.0" text="Business Travel - Admin" textFill="WHITE" AnchorPane.leftAnchor="46.0">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <ImageView id="exit" fx:id="exit" fitHeight="24.0" fitWidth="24.0" layoutX="755.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0">
+                    <image>
+                        <Image url="@../../assets/images/exit.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </top>
+    <left>
+        <AnchorPane id="leftPane" prefHeight="454.0" prefWidth="180.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="40.0">
+            <children>
+                <VBox prefHeight="614.0" prefWidth="148.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <AnchorPane prefWidth="160.0">
+                            <children>
+                                <Label fx:id="nomLabel" text="Nom Prenom" textAlignment="CENTER" textFill="#acd5ff" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="emailLabel" layoutX="10.0" layoutY="10.0" text="Email" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                        <Button alignment="BASELINE_LEFT" layoutX="-10.0" layoutY="45.0" onAction="#navigateReservationsSelection" prefHeight="38.0" styleClass="settings-button" text="Parameter" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="14.0" fitWidth="14.0">
+                                 <image>
+                                    <Image url="@../../assets/icons/settings.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                            </children>
+                        </AnchorPane>
+                        <Separator prefWidth="200.0" />
+                        <JFXButton fx:id="mbAccueil" alignment="BASELINE_LEFT" buttonType="RAISED" onAction="#navigateDashboard" prefHeight="40.0" prefWidth="179.0" styleClass="menu-button" text="Accueil">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0">
+                                    <image>
+                                        <Image url="@../../assets/icons/home.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+
+                        </JFXButton>
+                        <JFXButton fx:id="mbUtilisateurs" alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="106.0" onAction="#navigateUserSelection" prefHeight="40.0" prefWidth="179.0" styleClass="menu-button" text="Utilisateurs">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0">
+                                    <image>
+                                        <Image url="@../../assets/icons/shield-user.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="mbEntreprise" alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#navigateEntrepriseSelection" prefHeight="38.0" prefWidth="179.0" styleClass="menu-button" text="Entreprises">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0">
+                                    <image>
+                                        <Image url="@../../assets/icons/buildings.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="mbDomaines" alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="58.0" onAction="#navigateDomaineSelection" prefHeight="38.0" prefWidth="179.0" styleClass="menu-button" text="Domaines">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0">
+                                    <image>
+                                        <Image url="@../../assets/icons/garage.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="58.0" onAction="#navigateEvenementsSelection" prefHeight="38.0" prefWidth="179.0" styleClass="menu-button" text="Evenements">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0">
+                                    <image>
+                                        <Image url="@../../assets/icons/cup-star.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="58.0" onAction="#navigateReservationsSelection" prefHeight="38.0" prefWidth="179.0" styleClass="menu-button" text="Reservations">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0">
+                                    <image>
+                                        <Image url="@../../assets/icons/clipboard.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+
+    </left>
+    <center>
+        <AnchorPane prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+                <StackPane fx:id="contentArea" styleClass="contentArea" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

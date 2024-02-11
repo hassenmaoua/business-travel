@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.client.user.selection.UserSelectionController">
+    <children>
+        <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <Button fx:id="addUserBtn" mnemonicParsing="false" onAction="#handleAddUser" text="Ajouter">
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button-primary" />
+               </styleClass></Button>
+                <Button fx:id="modifierBtn" mnemonicParsing="false" onAction="#handleModifier" text="Modifier">
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button-secondary" />
+               </styleClass></Button>
+                <TextField fx:id="searchUserField" alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="217.0" promptText="Rechercher par mot clé" styleClass="form-control" />
+            </items>
+        </ToolBar>
+        <TableView fx:id="usersTableView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+            <columns>
+                <TableColumn fx:id="idColumn" maxWidth="50.0" minWidth="40.0" prefWidth="45.0" resizable="false" text="ID" />
+                <TableColumn fx:id="nomColumn" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="120.0" text="Nom" />
+                <TableColumn fx:id="prenomColumn" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="120.0" text="Prenom" />
+                <TableColumn fx:id="emailColumn" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="120.0" text="Email" />
+                <TableColumn fx:id="roleColumn" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="100.0" text="Role" />
+                <TableColumn fx:id="entrepriseColumn" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Entreprise" />
+                <TableColumn fx:id="dateCColumn" maxWidth="-1.0" minWidth="80.0" text="Crée le" />
+            <TableColumn fx:id="dateUColumn" maxWidth="-1.0" minWidth="80.0" text="Modifier le" />
+            </columns>
+        </TableView>
+    </children>
+   <stylesheets>
+      <URL value="@style.css" />
+      <URL value="@../../../assets/styles/global-style.css" />
+   </stylesheets>
+</AnchorPane>

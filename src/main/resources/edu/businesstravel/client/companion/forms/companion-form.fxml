@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.client.companion.forms.CompanionFormController">
+   <children>
+      <VBox spacing="2.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox layoutX="10.0" layoutY="10.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <VBox prefWidth="300.0">
+                     <children>
+                        <Label text="Evenement">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="evenementField" prefHeight="26.0" prefWidth="193.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="300.0">
+                     <children>
+                        <Label text="Domaine Activite">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="domaineField" prefHeight="26.0" prefWidth="193.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefWidth="200.0" spacing="10.0">
+               <children>
+                  <VBox prefWidth="300.0">
+                     <children>
+                        <Label text="Nom">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="nomField" prefHeight="26.0" prefWidth="193.0" />
+                        <Label fx:id="nomError" text="Message d'erreur" textFill="RED" />
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="130.0">
+                     <children>
+                        <Label text="Age">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="ageField" prefHeight="26.0" prefWidth="60.0" />
+                        <Label fx:id="ageError" text="Message d'erreur" textFill="RED" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <VBox prefWidth="300.0">
+                     <children>
+                        <Label text="Contact Urgent">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="contactField" prefHeight="26.0" prefWidth="193.0" />
+                        <Label fx:id="contactError" text="Message d'erreur" textFill="RED" />
+                     </children>
+                  </VBox>
+                  <VBox prefWidth="300.0">
+                     <children>
+                        <Label text="Nom Contact Urgent">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="nomContactField" prefHeight="26.0" prefWidth="193.0" />
+                        <Label fx:id="nomContactError" text="Message d'erreur" textFill="RED" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefWidth="200.0">
+               <children>
+                  <VBox prefWidth="600.0">
+                     <children>
+                        <Label text="Numero passport">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="passportField" prefHeight="26.0" />
+                        <Label fx:id="passportError" text="Message d'erreur" textFill="RED" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="93.0" prefWidth="200.0">
+               <children>
+                  <VBox prefWidth="600.0">
+                     <children>
+                        <Label text="Besoins specieaux">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="besoinsField" prefHeight="60.0" />
+                        <Label fx:id="besoinsError" text="Message d'erreur" textFill="RED" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <AnchorPane prefWidth="200.0">
+               <children>
+                  <Button fx:id="submitBtn" layoutX="379.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleSubmit" text="Ajouter" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+   </padding>
+</AnchorPane>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ebc36e40-c4a6-49fc-8ea6-ce0cbe674980" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fontawesomefx-8.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/categories.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/companions.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/entreprises.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/evenements.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/script.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/users.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/voyages.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/MainApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/authentification/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/category/CategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/companion/forms/CompanionFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/companion/selection/CompanionSelectionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/dashboard/DashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/entreprise/forms/AjouterEntrepriseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/entreprise/forms/EditEntreprieController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/entreprise/selection/EntreprisesSelectionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/evenement/forms/AjoutEventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/evenement/forms/ModifEventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/evenement/selection/EvenementSelectionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/layout/AdminSpace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/layout/CoordinatorSpace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/layout/EmployerSpace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/layout/LayoutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/reservation/selection/ReservationSelectionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/user/details/UserDetailsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/user/forms/UserFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/user/selection/UserSelectionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/voyage/details/VoyageDetailsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/voyage/forms/VoyageFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/client/voyage/selection/VoyageSelectionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/entities/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/entities/Companion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/entities/Domaine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/entities/Entreprise.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/entities/Etat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/entities/Evenement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/entities/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/entities/Voyage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/entities/VoyageClasse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/EntrepriseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/category/CategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/category/ICategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/companion/CompanionCrud.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/companion/CompanionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/evenement/EvenementRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/evenement/IEvenementRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/user/UserCrud.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/user/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/utils/AuthInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/utils/CrudInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/voyage/VoyageCrud.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/repository/voyage/VoyageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/services/authentification/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/services/authentification/IAuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/services/companion/CompanionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/services/companion/ICompanionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/services/user/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/services/user/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/services/voyage/IVoyageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/services/voyage/VoyageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/tools/DatabaseConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/tools/EmailAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/tools/EmailSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/tools/ExcelExporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/tools/GloablStaticData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/tools/Helpers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/tools/PasswordGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/tools/body_template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/businesstravel/tools/voyage_template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/admin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/airplane-square.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/building-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/building.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/buildings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/clipboard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/cup-star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/garage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/people-nearby.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/person-crop-square.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/settings-active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/settings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/icons/shield-user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/images/Business-travelers-at-airport-blog-image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/images/Main_login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/images/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/images/exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/styles/global-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/assets/templates/body_template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/authentification/login-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/authentification/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/category/add_category.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/category/design.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/companion/forms/companion-form.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/companion/forms/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/companion/selection/companion-selection.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/companion/selection/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/dashboard/dashboard-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/dashboard/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/entreprise/forms/ajout-entreprise.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/entreprise/forms/edit-entreprise.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/entreprise/selection/entreprise-selection.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/entreprise/selection/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/evenement/design.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/evenement/forms/add_event.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/evenement/forms/modif_event.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/evenement/selection/list_event.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/layout/admin-space.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/layout/admin-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/layout/coordinator-space.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/layout/coordinator-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/layout/employer-space.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/layout/employer-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/layout/layout-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/layout/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/reservation/selection/reservation-selection.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/user/details/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/user/details/user-details.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/user/forms/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/user/forms/user-form.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/user/selection/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/user/selection/user-selection.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/voyage/details/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/voyage/details/voyage-details.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/voyage/forms/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/voyage/forms/voyage-form.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/voyage/selection/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/businesstravel/client/voyage/selection/voyage-selection.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="FxmlFile" />
+        <option value="CSS File" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2bKQS2AmbtyxHuVDcXKjWsvek8O" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "SQL Inserts",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Work/JavaFX/BusinessTravel/script",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.4862069",
+    "settings.editor.selected.configurable": "preferences.customizations",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Work\JavaFX\BusinessTravel\src\main\resources\edu\businesstravel\client\evenement\forms" />
+      <recent name="C:\Work\JavaFX\BusinessTravel\src\main\resources\edu\businesstravel\client\category" />
+      <recent name="C:\Work\JavaFX\BusinessTravel\src\main\java\edu\businesstravel\repository" />
+      <recent name="C:\Work\JavaFX\BusinessTravel\src\main\resources\edu\businesstravel\client\evenement" />
+      <recent name="C:\Work\JavaFX\BusinessTravel\src\main\resources\edu\businesstravel\assets\icons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Work\JavaFX\BusinessTravel\src\main\resources\edu\businesstravel\client\evenement" />
+      <recent name="C:\Work\JavaFX\BusinessTravel\src\main\resources\edu\businesstravel\client\evenement\selection" />
+      <recent name="C:\Work\JavaFX\BusinessTravel\src\main\java\edu\businesstravel\client\user\details" />
+      <recent name="C:\Work\JavaFX\UserManagement\src\main\java\edu\usermanagement\tools" />
+      <recent name="C:\Work\JavaFX\UserManagement\src\main\java\edu\usermanagement\client\entreprise\forms" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="edu.businesstravel.client.evenement.forms" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.businesstravel.client.category" />
+      <recent name="edu.businesstravel.repository.evenement" />
+      <recent name="edu.businesstravel.repository.utils" />
+      <recent name="edu.businesstravel.entities" />
+      <recent name="edu.businesstravel.client.evenement.forms" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainApplication">
+    <configuration name="EmailAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.businesstravel.tools.EmailAPI" />
+      <module name="BusinessTravel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.businesstravel.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmailSender" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.businesstravel.tools.EmailSender" />
+      <module name="BusinessTravel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.businesstravel.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.businesstravel.MainApplication" />
+      <module name="BusinessTravel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.businesstravel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainApplication" />
+        <item itemvalue="Application.EmailAPI" />
+        <item itemvalue="Application.EmailSender" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ebc36e40-c4a6-49fc-8ea6-ce0cbe674980" name="Changes" comment="" />
+      <created>1705961288861</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705961288861</updated>
+      <workItem from="1705961289953" duration="4680000" />
+      <workItem from="1705966034516" duration="761000" />
+      <workItem from="1706034061593" duration="8117000" />
+      <workItem from="1706133426018" duration="665000" />
+      <workItem from="1706224984207" duration="20000" />
+      <workItem from="1706389462453" duration="6246000" />
+      <workItem from="1706437757017" duration="11376000" />
+      <workItem from="1706453903604" duration="4415000" />
+      <workItem from="1706555104038" duration="726000" />
+      <workItem from="1706555875268" duration="5774000" />
+      <workItem from="1706639601088" duration="634000" />
+      <workItem from="1706690252525" duration="3871000" />
+      <workItem from="1706695576420" duration="350000" />
+      <workItem from="1706705543300" duration="12125000" />
+      <workItem from="1706719508771" duration="1180000" />
+      <workItem from="1706735125934" duration="833000" />
+      <workItem from="1706815602841" duration="11549000" />
+      <workItem from="1706888679135" duration="7406000" />
+      <workItem from="1706906573236" duration="5261000" />
+      <workItem from="1706980161226" duration="9929000" />
+      <workItem from="1707049991943" duration="7091000" />
+      <workItem from="1707057402212" duration="4164000" />
+      <workItem from="1707160373547" duration="7739000" />
+      <workItem from="1707251278368" duration="11341000" />
+      <workItem from="1707306893912" duration="5021000" />
+      <workItem from="1707311953677" duration="14000" />
+      <workItem from="1707313169964" duration="4489000" />
+      <workItem from="1707328869347" duration="245000" />
+      <workItem from="1707329147332" duration="5348000" />
+      <workItem from="1707334730915" duration="1478000" />
+      <workItem from="1707419307765" duration="2318000" />
+      <workItem from="1707421647979" duration="999000" />
+      <workItem from="1707432065072" duration="1911000" />
+      <workItem from="1707470826352" duration="1240000" />
+      <workItem from="1707502530400" duration="5945000" />
+      <workItem from="1707508605055" duration="10486000" />
+      <workItem from="1707521934039" duration="4366000" />
+      <workItem from="1707555473458" duration="1719000" />
+      <workItem from="1707647700157" duration="342000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/businesstravel/services/voyage/VoyageService.java</url>
+          <line>141</line>
+          <properties class="edu.businesstravel.services.voyage.VoyageService" method="filterCompanionsByDate">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/businesstravel/services/voyage/VoyageService.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

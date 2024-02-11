@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane fx:id="mainContainer" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0"
+            style="-fx-background-color: white;" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" stylesheets="@style.css"
+            fx:controller="edu.businesstravel.client.authentification.LoginController">
+    <children>
+        <AnchorPane fx:id="signInSection" layoutX="427.0" layoutY="235.0" onMouseDragged="#dragged"
+                    onMousePressed="#pressed" prefHeight="600.0" prefWidth="500.0" AnchorPane.rightAnchor="0.0"
+                    AnchorPane.topAnchor="0.0">
+            <children>
+                <Label alignment="CENTER" layoutX="107.0" layoutY="25.0" prefHeight="80.0" prefWidth="300.0"
+                       text="Business Travel" textFill="#1564bf" textOverrun="CENTER_ELLIPSIS"
+                       AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="50.0">
+                    <font>
+                        <Font size="28.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER" prefHeight="30.0" prefWidth="180.0" style="-fx-text-fill: #003c8f;"
+                       text="Se connecter" textFill="#003c8f" AnchorPane.rightAnchor="160.0"
+                       AnchorPane.topAnchor="180.0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <JFXTextField fx:id="signInUsernameField" focusColor="#ffffff00" prefHeight="40.0" prefWidth="260.0"
+                              promptText="Email" style="-fx-border-width: 2;" unFocusColor="#ffffff00"
+                              AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="220.0"/>
+                <JFXPasswordField fx:id="signInPasswordField" focusColor="#ffffff00" layoutX="120.0" layoutY="269.0"
+                                  prefHeight="40.0" prefWidth="260.0" promptText="Mot de passe" unFocusColor="#4d4d4d00"
+                                  AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="269.0"/>
+<!--                <Hyperlink fx:id="forgetPasswordLink" contentDisplay="CENTER" prefHeight="30.0" prefWidth="220.0"-->
+<!--                           styleClass="forgot-password" text="Mot de passe oublié?" textAlignment="CENTER"-->
+<!--                           textFill="#003c8f" underline="true" AnchorPane.rightAnchor="160.0"-->
+<!--                           AnchorPane.leftAnchor="160" AnchorPane.topAnchor="320.0">-->
+<!--                    <font>-->
+<!--                        <Font size="14.0"/>-->
+<!--                    </font>-->
+<!--                </Hyperlink>-->
+                <JFXButton fx:id="LoginButton" buttonType="RAISED" onAction="#loginButtonOnAction" prefHeight="50.0"
+                           prefWidth="200.0" ripplerFill="BLACK" text="LOGIN" AnchorPane.rightAnchor="150.0"
+                           AnchorPane.topAnchor="365.0"/>
+                <Separator layoutX="62.0" layoutY="170.0" prefWidth="300.0" AnchorPane.rightAnchor="100.0"
+                           AnchorPane.topAnchor="170.0"/>
+                <Label alignment="TOP_LEFT" layoutX="125.0" layoutY="109.0" lineSpacing="2.0" prefHeight="43.0"
+                       prefWidth="260.0" styleClass="login-text"
+                       text="Connectez-vous à votre espace personnel pour bénéficier de nos services." wrapText="true"
+                       AnchorPane.leftAnchor="120.0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <JFXButton layoutX="958.0" layoutY="10" onAction="#close" prefHeight="30.0" prefWidth="30.0" styleClass="close-button"
+                   text="X" textFill="#003c8f">
+            <font>
+                <Font name="System Bold" size="32.0"/>
+            </font>
+        </JFXButton>
+        <Label layoutX="633.0" layoutY="578.0" text="© 2024 Business Travel All Rights Reserved"
+               AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="132.0"/>
+        <Pane fx:id="loginSliderPane" layoutX="50.0" prefHeight="600.0" prefWidth="400.0">
+            <children>
+                <ImageView pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../assets/images/Business-travelers-at-airport-blog-image.jpg"/>
+                    </image>
+                </ImageView>
+            </children>
+            <effect>
+                <DropShadow/>
+            </effect>
+        </Pane>
+    </children>
+</AnchorPane>

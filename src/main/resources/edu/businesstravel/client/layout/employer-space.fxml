@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.client.layout.EmployerSpace">
+    <stylesheets>
+        <URL value="@style.css" />
+      <URL value="@employer-style.css" />
+    </stylesheets>
+    <top>
+        <AnchorPane id="topPane" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="40.0" prefWidth="800.0">
+            <children>
+                <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="8.0">
+                    <image>
+                        <Image url="@../../assets/images/airplane.png" />
+                    </image>
+                </ImageView>
+                <Label id="titleLabel" fx:id="titleLabel" layoutX="46.0" layoutY="6.0" text="Business Travel - Employer" textFill="WHITE" AnchorPane.leftAnchor="46.0">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <ImageView id="exit" fx:id="exit" fitHeight="24.0" fitWidth="24.0" layoutX="755.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0">
+                    <image>
+                        <Image url="@../../assets/images/exit.png" />
+                    </image>
+                </ImageView>
+            </children>
+         <styleClass>
+            <String fx:value="topPane" />
+            <String fx:value="topPane-employee" />
+         </styleClass>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane prefHeight="600.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+            <AnchorPane prefHeight="100.0" prefWidth="680.0" style="-fx-background-color: white;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                        <AnchorPane prefHeight="45.0" prefWidth="160.0" styleClass="employer-details" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                        <HBox layoutX="4.0" layoutY="4.8" prefWidth="362.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="2.0">
+                           <children>
+                              <Label text="Bonjour, " textAlignment="RIGHT" textFill="#25292e" wrapText="true">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                                      <Label fx:id="nomLabel" styleClass="name" text="Nom Prenom" textAlignment="RIGHT" textFill="#25292e" wrapText="true">
+                                          <font>
+                                              <Font size="14.0" />
+                                          </font>
+                                      </Label>
+                           </children>
+                        </HBox>
+                                <Label fx:id="emailLabel" layoutX="12.0" layoutY="25.599999999999998" prefHeight="19.0" prefWidth="334.0" text="Email" textAlignment="CENTER" textFill="#969696" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="23.0">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font>
+                                </Label>
+                                <Button alignment="BASELINE_LEFT" layoutX="691.0" layoutY="1.0" onAction="#logout" text="Déconnexion" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="14.0" fitWidth="14.0">
+                                            <image>
+                                                <Image url="@../../assets/icons/exit.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                           <styleClass>
+                              <String fx:value="exit-button" />
+                              <String fx:value="settings-button-employer" />
+                           </styleClass>
+                                </Button>
+                            </children>
+                        </AnchorPane>
+                  <Separator prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0" />
+                  <AnchorPane prefHeight="55.0" styleClass="header-menu" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <JFXButton fx:id="mbReservation" onAction="#navigateReservationSelection" styleClass="menu-button" text="Mes Reservations" />
+                              <JFXButton fx:id="mbVoyage" layoutX="10.0" layoutY="10.0" onAction="#navigateVoyageSelection" styleClass="menu-button" text="Mes Voyages" />
+                              <JFXButton fx:id="mbCompanion" layoutX="62.0" layoutY="10.0" onAction="#navigateCompanionsSelection" styleClass="menu-button" text="Mes Companions" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+                <StackPane fx:id="contentArea" styleClass="contentArea" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="110.0" />
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

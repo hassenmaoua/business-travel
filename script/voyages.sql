@@ -1,0 +1,1 @@
+INSERT INTO businesstravel.voyages (idVoyage, nom, depart, destination, dateDepart, classe, avion, dateC, dateU) VALUES (1, 'Voyage A', 'Tunis', 'Region B', '2024-03-11', 'FIRST', 'Boing', null, '2024-02-10 10:09:47');

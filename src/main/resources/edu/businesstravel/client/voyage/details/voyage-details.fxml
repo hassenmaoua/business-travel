@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.client.voyage.details.VoyageDetailsController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="title" styleClass="title" text="Detail Voyage">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <AnchorPane minHeight="130.0">
+               <children>
+                  <HBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <VBox prefWidth="300.0">
+                           <children>
+                              <HBox alignment="BASELINE_LEFT">
+                                 <children>
+                                    <Label styleClass="custom-label" text="Voyage: " />
+                                    <Label fx:id="nameLabel" styleClass="details-label" text="VoyageName" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="BASELINE_LEFT">
+                                 <children>
+                                    <Label styleClass="custom-label" text="Depart: " />
+                                    <Label fx:id="departLabel" styleClass="details-label" text="VoyageDepart" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="BASELINE_LEFT">
+                                 <children>
+                                    <Label styleClass="custom-label" text="Destination: " />
+                                    <Label fx:id="destinationLabel" styleClass="details-label" text="VoyageDestination" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox prefWidth="300.0">
+                           <children>
+                              <HBox alignment="BASELINE_LEFT">
+                                 <children>
+                                    <Label styleClass="custom-label" text="Classe: " />
+                                    <Label fx:id="classeLabel" styleClass="details-label" text="VoyageClasse" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="BASELINE_LEFT">
+                                 <children>
+                                    <Label styleClass="custom-label" text="Avion: " />
+                                    <Label fx:id="avionLabel" styleClass="details-label" text="VoyageAvion" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="BASELINE_LEFT">
+                                 <children>
+                                    <Label styleClass="custom-label" text="Date Depart: " />
+                                    <Label fx:id="dateDepartLabel" styleClass="details-label" text="VoyageDateDepart" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Button fx:id="matchingBtn" layoutX="226.0" layoutY="66.0" mnemonicParsing="false" onAction="#handleMatching" text="Matching" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="companionTableView">
+              <columns>
+                <TableColumn fx:id="employerNomCol" prefWidth="145.0" text="Employer" />
+                <TableColumn fx:id="evenementCol" prefWidth="145.0" text="Evenement" />
+                  <TableColumn fx:id="entrepriseCol" prefWidth="145.0" text="Entreprise" />
+                  <TableColumn fx:id="domaineCol" prefWidth="145.0" text="Domaine" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

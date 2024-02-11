@@ -1,0 +1,46 @@
+.header-menu {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0, 0, 0);
+}
+
+.name {
+    -fx-text-fill: #8A2BE2;
+}
+
+.menu-button {
+    -fx-padding: 5px 15px 5px 15px;
+    -fx-font-size: 12pt;
+    -fx-background-color: #DEDEDE;
+    -fx-text-fill: #0d0316;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
+}
+
+.menu-button:focused {
+    -fx-background-color: #a862ea;
+    -fx-text-fill: #FFF;
+}
+
+.menu-button:hover{
+    -fx-background-color: #c18ff0;
+
+}
+
+.active-menu-button {
+    -fx-background-color: #a862ea;
+    -fx-text-fill: #FFF;
+}
+
+.active-menu-button:hover {
+    -fx-background-color: #a862ea;
+    -fx-cursor: default;
+}
+
+
+.employer-details {
+    -fx-padding: 2pt 4pt 2pt 4pt;
+
+}
+
+.settings-button-employer{
+    -fx-text-fill: #000;
+}

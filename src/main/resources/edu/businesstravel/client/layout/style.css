@@ -1,0 +1,80 @@
+.root {
+
+}
+
+#exit {
+    -fx-cursor: hand;
+}
+
+/* Default style for top pane */
+.topPane {
+    -fx-background-color: linear-gradient(to bottom, #0B60B0, #0A5098);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 5, 0, 0, 0);
+}
+
+/* Variation 1 */
+.topPane-admin {
+    -fx-background-color: linear-gradient(to bottom, #0B60B0, #0A5098);
+}
+
+/* Variation 2 */
+.topPane-coordinator {
+    -fx-background-color: linear-gradient(to bottom, #32CD32, #008000);
+}
+
+/* Variation 3 */
+.topPane-employee {
+    -fx-background-color: linear-gradient(to bottom, #8A2BE2, #4B0082);
+}
+
+#titleLabel {
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFF;
+    -fx-font-size: 14pt;
+}
+
+/* Left navigation area styling */
+#leftPane {
+    -fx-background-color: #2a2a2a;
+}
+
+
+#leftPane VBox {
+    -fx-spacing: 10;
+    -fx-padding: 10;
+}
+
+.admin-details {
+    -fx-background-color: #333333;
+    -fx-background-radius: 10;
+}
+
+
+
+
+.exit-button {
+    -fx-padding: 0px 8px 0px 8px;
+    -fx-font-size: 10pt;
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFF;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
+}
+
+
+
+.exit-button:hover{
+    -fx-text-fill: #ef6868;
+}
+
+
+/* Center content area styling */
+.contentArea {
+
+    -fx-padding: 10;
+    -fx-background-image: url("../../assets/images/background.jpg");
+    -fx-background-size: cover;
+}
+
+
+/* Customize as needed for your specific design */

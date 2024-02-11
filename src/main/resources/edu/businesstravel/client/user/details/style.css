@@ -1,0 +1,23 @@
+.label {
+    -fx-font-size: 16px;
+}
+.name {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #EDEDED;
+}
+
+.role {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+}
+
+.domaine{
+    -fx-font-size: 12px;
+    -fx-text-fill: #494949;
+}
+
+.title {
+    -fx-font-size: 24px;
+    font-weight: bold;
+}

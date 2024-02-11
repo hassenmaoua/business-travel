@@ -1,0 +1,14 @@
+#formTitle {
+    -fx-text-fill: #0B60B0;
+    -fx-font-size: 16pt;
+    -fx-alignment: center;
+    -fx-padding: 10 0 10 0;
+}
+
+Label {
+    -fx-text-fill: #0B60B0;
+}
+
+.errorLabel {
+    -fx-text-fill: red;
+}

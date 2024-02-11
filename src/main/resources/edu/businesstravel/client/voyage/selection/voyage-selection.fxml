@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.client.voyage.selection.VoyageSelectionController">
+    <children>
+        <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" styleClass="tool-bar">
+            <items>
+                <Button fx:id="addVoyageBtn" mnemonicParsing="false" onAction="#handleAddVoyage" text="Ajouter" />
+                <Button fx:id="modifierVoyageBtn" mnemonicParsing="false" onAction="#handleModifier" text="Modifier" />
+                <TextField fx:id="searchVoyageField" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="200.0" promptText="Rechercher par mot clé" />
+            </items>
+        </ToolBar>
+        <TableView fx:id="voyageTableView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+            <columns>
+                <TableColumn fx:id="idCol" maxWidth="50.0" minWidth="40.0" prefWidth="45.0" resizable="false" text="ID" />
+                <TableColumn fx:id="nomCol" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="120.0" text="Libellé" />
+                <TableColumn fx:id="dateDepartCol" maxWidth="-1.0" minWidth="80.0" text="Date depart" />
+                <TableColumn fx:id="departCol" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="120.0" text="Depart" />
+                <TableColumn fx:id="destinationCol" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="120.0" text="Destination" />
+                <TableColumn fx:id="classeCol" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="100.0" text="Class" />
+                <TableColumn fx:id="avionCol" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Avion" />
+                <TableColumn fx:id="dateCCol" maxWidth="-1.0" minWidth="80.0" text="Crée le" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

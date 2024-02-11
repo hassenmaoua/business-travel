@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="300.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.client.user.details.UserDetailsController">
+   <children>
+      <AnchorPane layoutX="106.0" layoutY="14.0" prefHeight="56.0" prefWidth="600.0" style="-fx-background-color: #2a2a2a;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="nomLabel" layoutX="127.0" layoutY="14.0" styleClass="name" text="-- --" AnchorPane.leftAnchor="127.0" />
+            <Label fx:id="roleLabel" layoutX="134.0" layoutY="53.0" styleClass="role" text="--" AnchorPane.leftAnchor="134.0" />
+            <ImageView fx:id="profileImageView" fitHeight="105.0" fitWidth="122.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@../../../assets/icons/person-crop-square.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Separator layoutY="104.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
+      <AnchorPane layoutX="163.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" styleClass="title" text="Informations de contact :" AnchorPane.leftAnchor="15.0" />
+            <GridPane layoutX="25.0" layoutY="57.0" prefWidth="300.0" AnchorPane.leftAnchor="25.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.199951171875" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.20001220703125" minWidth="200.0" prefWidth="200.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Email:" />
+                  <Label fx:id="emailLabel" style="-fx-font-weight: bold;" text="--" GridPane.columnIndex="1" />
+                  <Label text="Telephone:" GridPane.rowIndex="1" />
+                  <Label fx:id="telephoneLabel" style="-fx-font-weight: bold;" text="--" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label layoutX="10.0" layoutY="47.0" text="Adresse:" GridPane.rowIndex="2" />
+                  <Label fx:id="adresseLabel" layoutX="110.0" layoutY="47.0" style="-fx-font-weight: bold;" text="--" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <ImageView fx:id="entrepriseImageView" fitHeight="91.0" fitWidth="105.0" layoutX="433.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/icons/building-3.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="companyNameLabel" alignment="CENTER" layoutX="386.0" layoutY="115.0" prefHeight="26.0" prefWidth="177.0" style="-fx-font-weight: bold;" text="--">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="companyDomaineLabel" alignment="CENTER" layoutX="386.0" layoutY="138.0" prefHeight="26.0" prefWidth="178.0" styleClass="domaine" text="--">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

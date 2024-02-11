@@ -1,0 +1,54 @@
+.button {
+    -fx-font-weight: normal;
+    -fx-alignment: center;
+    -fx-padding: 0.375em 0.75em;
+    -fx-font-size: 1em;
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+    -fx-cursor: hand;
+}
+
+.button-primary {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #0b60b0;
+    -fx-border-color: transparent;
+}
+
+.button-primary:hover {
+    -fx-background-color: #3c80c0;
+}
+
+.button-secondary {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #6c757d;
+    -fx-border-color: transparent;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #5a6268;
+}
+
+.text-field, .text-area {
+    -fx-display: block;
+    -fx-padding: 0.375em 0.75em;
+    -fx-font-size: 1em;
+    -fx-line-spacing: 1.5;
+    -fx-text-fill: #495057;
+    -fx-control-inner-background: #fff;
+    -fx-background-insets: 0;
+    -fx-border-width: 1;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 0.25em;
+    -fx-focus-color: #0b60b0;
+    -fx-faint-focus-color: #3c80c0;
+    -fx-inner-border: transparent;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-text-fill: #495057;
+    -fx-control-inner-background: #fff;
+    -fx-border-color: #0b60b0;
+    -fx-box-border: #3c80c0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}

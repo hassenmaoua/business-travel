@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.businesstravel.client.companion.selection.CompanionSelectionController">
+    <children>
+        <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" styleClass="tool-bar">
+            <items>
+                <TextField fx:id="searchCompanionField" prefHeight="25.0" prefWidth="200.0" promptText="Rechercher par mot clé" />
+            </items>
+        </ToolBar>
+        <TableView fx:id="companionTableView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+            <columns>
+                <TableColumn fx:id="idCol" maxWidth="50.0" minWidth="40.0" prefWidth="45.0" resizable="false" text="ID" />
+                <TableColumn fx:id="userNomCol" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="120.0" text="Employer Nom" />
+                <TableColumn fx:id="evenementTitreCol" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Evenement" />
+                <TableColumn fx:id="domaineActiviteCol" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="100.0" text="Domaine" />
+                <TableColumn fx:id="voyageNomCol" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="100.0" text="Voyage" />
+                <TableColumn fx:id="employerEmailCol" maxWidth="1.7976931348623157E308" minWidth="120.0" prefWidth="120.0" text="Employer Email" />
+                <TableColumn fx:id="entrepriseCol" maxWidth="-1.0" minWidth="100.0" prefWidth="100.0" text="Entreprise" />
+                <TableColumn fx:id="dateCCol" maxWidth="-1.0" minWidth="80.0" text="Crée le" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

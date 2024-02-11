@@ -1,0 +1,104 @@
+/* Styles for the GridPane */
+.grid-pane {
+    -fx-background-color: #f2f2f2;
+    -fx-padding: 20px;
+}
+
+/* Styles for Labels */
+.label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+}
+
+/* Styles for TextFields */
+.text-field {
+    -fx-font-size: 14px;
+}
+
+/* Styles for DatePickers */
+.date-picker {
+    -fx-font-size: 14px;
+}
+
+/* Apply specific styles to individual components if needed */
+#titleTextField {
+    -fx-pref-width: 200px;
+}
+/*#filterTextField{
+    -fx-text-fill: black !important;
+-fx-background-color: #ffffff !important;
+}*/
+
+#descriptionTextField {
+    -fx-pref-width: 200px;
+}
+
+#regionTextField, #adresseTextField, #categoryTextField {
+    -fx-pref-width: 200px;
+}
+.required-field {
+    -fx-background-color: #FFB6C1; /* Light pink color for highlighting */
+}
+.btn:hover{
+    -fx-cursor:hand ;
+}
+.table-view {
+    -fx-background-color: #375f7a;
+    -fx-background-radius:14 14 0 0;
+
+}
+.table-view .column-header-background{
+    -fx-background-color: #375f7a;
+    -fx-background-radius:14;
+    -fx-background-insets: 0 0 10 0;
+
+
+
+}
+.table-view .column-header, .table-view .filler{
+    -fx-size:50px;
+    -fx-border-width: 0 0 10 0;
+    -fx-background-color:transparent;
+
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white ;
+}
+
+/* Add more styling as needed */
+.button {
+    -fx-background-color: #65b3da;
+    -fx-text-fill: white;
+}
+.grid-pane {
+    -fx-background-color: #f4f4f4;
+    -fx-padding: 20;
+}
+
+.label {
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+
+.text-field,
+.date-picker,
+.combo-box {
+    -fx-pref-width: 200;
+    -fx-pref-height: 30;
+}
+
+.button {
+    -fx-pref-width: 120;
+    -fx-pref-height: 36;
+    -fx-font-size: 16;
+    -fx-text-fill: white;
+    -fx-background-color: #0b60b0;
+}
+.pdf {
+    -fx-pref-width: 120;
+    -fx-pref-height: 36;
+    -fx-font-size: 16;
+    -fx-text-fill: white;
+    -fx-background-color: #11b00b;
+}

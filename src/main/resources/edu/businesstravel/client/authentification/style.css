@@ -1,0 +1,110 @@
+.login-text {
+    -fx-text-alignment: center;
+}
+
+.forgot-password {
+    -fx-text-alignment: center;
+
+}
+
+.text-input {
+    -fx-text-fill: #1564bf;
+    -fx-highlight-fill: #5e92f3;
+    -fx-highlight-text-fill: black;
+    -fx-prompt-text-fill: grey;
+    -fx-background-insets: 1;
+    -fx-background-radius: 5;
+    -fx-background-color: #F4F4F4;
+    -fx-cursor: text;
+    -fx-padding: 0.3em 0.5em 0.3em 1.5em;
+    -fx-font-size: 15;
+    -jfx-unfocus-color: #ffffff00;
+    -jfx-focus-color: #ffffff00;
+}
+
+.button {
+    -fx-background-color: #1564bf;
+    -fx-background-radius: 25;
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+}
+
+.button:hover {
+    -fx-background-color: #4483CC;
+    -fx-background-radius: 25;
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+}
+
+.close-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 1;
+    -fx-text-fill: #1564bf;
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+    -fx-padding: 0;
+}
+
+.button2 {
+    -fx-background-color: black;
+    -fx-background-radius: 25;
+    -fx-text-fill: white;
+    -fx-font-size: 18;
+    -fx-opacity: 0.7;
+    -fx-pref-width: 180;
+    -fx-pref-height: 54;
+}
+
+.button2:hover {
+    -fx-background-color: black;
+    -fx-background-radius: 25;
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+    -fx-opacity: 0.8;
+    -fx-pref-width: 200;
+    -fx-pref-height: 60;
+    -fx-translate-x: -10;
+    -fx-translate-y: -3;
+}
+
+
+.time-picker{
+    -jfx-unfocus-color: #ffffff00;
+    -jfx-focus-color: #ffffff00;
+    -fx-prompt-text-fill: grey;
+    -fx-text-fill: #1564bf;
+}
+
+
+
+
+/*.text-input:focused {
+    -fx-highlight-fill: -fx-accent;
+    -fx-highlight-text-fill: white;
+    -fx-background-color:
+        -fx-focus-color,
+        -fx-control-inner-background,
+        -fx-faint-focus-color;
+    -fx-background-insets: -0.2, 1, -1.4, 3;
+    -fx-background-radius: 3, 2, 4, 0;
+    -fx-prompt-text-fill: transparent;
+}
+
+.button {
+    -fx-background-color: #e45656;
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-background-color: #ff8883;
+    -fx-text-fill: white;
+}
+
+.button:disabled {
+    -fx-background-color: #e45656;
+    -fx-text-fill: black;
+}
+
+.icon {
+ -fx-text-fill: green;
+}
